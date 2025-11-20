@@ -6,4 +6,4 @@
 ---
 | Lab#   | Title                                                                | Date       | Remarks |
 |------  |--------------------------  |------------|---------|
-| 1      | Introduction to MMS lab                                               | .... |Familirization with github basic, discord        |
+| 1      | Introduction to MMS lab                                               | 2082/08/04| Familirization with github basic, discord        |
