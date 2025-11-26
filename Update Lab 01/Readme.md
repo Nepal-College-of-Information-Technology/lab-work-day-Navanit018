@@ -35,6 +35,7 @@
 - Tested voice/video communication features.
 
 6.  Observations
+   
 - Multimedia systems require synchronization between audio and video for smooth playback.
 - GitHub simplifies collaborative coding and ensures version control.
 - Discord enhances team communication and reduces coordination overhead.
@@ -46,3 +47,4 @@
 
 8. Conclusion
 The lab provided a foundational understanding of multimedia systems and introduced essential collaboration tools. By combining technical exploration (GitHub) with communication practice (Discord), students are better prepared for team-based software development and multimedia projects.
+
