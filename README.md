@@ -7,3 +7,4 @@
 | Lab#   | Title                                                                | Date       | Remarks |
 |------  |--------------------------  |------------|---------|
 | 1      | Introduction to MMS lab                                               | 2082/08/04| Familirization with github basic, discord        |
+| 2      | Introduction about Sound creation lab.                                | 2082/08/18| Working with VS code                             |
