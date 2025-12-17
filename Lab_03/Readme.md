@@ -25,6 +25,20 @@
   - Note number (0–127)
 - MIDI Note Numbers map to musical notes.  
   - Example: 60 = Middle C, 69 = A4 (440 Hz)
+ 
+### *2. Music Theory (Basic)*
+
+#### *Beat*
+- The basic unit of time in a musical composition.
+
+#### *Harmony*
+- Two or more notes played together (chords).
+
+#### *Melody*
+- A sequential pattern of musical notes forming the main tune.
+
+---
+
 
 
 #### *Frequency Formula*
