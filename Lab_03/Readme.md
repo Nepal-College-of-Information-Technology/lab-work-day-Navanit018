@@ -129,5 +129,10 @@ To convert a MIDI note number n to its frequency: f = 440 × 2^((n - 69) / 12)
 
 ---
 
+## *Conclusion*
+
+This lab explored MIDI processing using Python.  
+We extracted MIDI note information, converted notes into frequencies, and generated musical patterns such as beats, harmony, and melody. We also played and converted these MIDI files into standard audio formats. This experiment strengthened understanding of MIDI protocol, basic music theory, and Python-based algorithmic music generation.
+
 
 
