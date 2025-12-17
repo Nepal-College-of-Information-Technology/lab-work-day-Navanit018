@@ -10,7 +10,6 @@
 - Play individual MIDI tracks (.mid files).  
 - Convert MIDI tracks into standard audio (.wav) files using Python tools.
 
-  
 
 ## *Background Theory*
 
