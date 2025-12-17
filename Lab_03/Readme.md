@@ -47,3 +47,14 @@ To convert a MIDI note number n to its frequency: f = 440 × 2^((n - 69) / 12)
 
 
 ---
+
+### *3. Python Libraries Used*
+
+#### *Mido*
+- For reading, writing, and analyzing MIDI files.
+
+#### *Pygame*
+- For playing MIDI files and basic audio handling.
+
+---
+
