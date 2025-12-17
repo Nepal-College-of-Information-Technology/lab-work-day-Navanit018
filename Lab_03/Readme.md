@@ -9,3 +9,19 @@
 - Generate simple beat, harmony, and melody patterns using MIDI notes.  
 - Play individual MIDI tracks (.mid files).  
 - Convert MIDI tracks into standard audio (.wav) files using Python tools.
+
+  
+
+## *Background Theory*
+
+### *1. MIDI Standard*
+
+- *MIDI (Musical Instrument Digital Interface)* is a communication protocol used to send digital music performance data.  
+- It stores musical instructions such as:
+  - note_on  
+  - note_off  
+  - MIDI channel  
+  - Velocity  
+  - Note number (0–127)
+- MIDI Note Numbers map to musical notes.  
+  - Example: 60 = Middle C, 69 = A4 (440 Hz)
