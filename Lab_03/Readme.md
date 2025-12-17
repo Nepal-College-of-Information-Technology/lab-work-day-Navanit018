@@ -111,4 +111,23 @@ To convert a MIDI note number n to its frequency: f = 440 × 2^((n - 69) / 12)
 
 ---
 
+## *Output*
+
+- Printed MIDI:
+  - Channels  
+  - Notes  
+  - Frequencies  
+
+- Generated MIDI tracks:
+  - beat.mid
+  - harmony.mid
+  - melody.mid
+
+- Played audio using Pygame.
+
+- Converted .wav files from MIDI tracks (if tools installed).
+
+---
+
+
 
