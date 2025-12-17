@@ -58,3 +58,57 @@ To convert a MIDI note number n to its frequency: f = 440 × 2^((n - 69) / 12)
 
 ---
 
+## *Procedure*
+
+1. Import required libraries:
+
+    python
+    import mido
+    import math
+    import pygame
+    
+
+2. Load the MIDI file:
+
+    python
+    mid = mido.MidiFile("input.mid")
+    
+
+3. Iterate and print MIDI messages, channels, and note numbers:
+
+    python
+    for msg in mid:
+        if msg.type == "note_on":
+            print(msg.note, msg.channel)
+    
+
+4. Convert MIDI note numbers to frequency:
+
+    python
+    def midi_to_freq(n):
+        return 440 * (2 ** ((n - 69) / 12))
+    
+
+5. Generate:
+   - Beat pattern  
+   - Harmony (simple triads)  
+   - Melody sequence  
+
+6. Save generated tracks as:
+
+    - beat.mid
+    - harmony.mid
+    - melody.mid
+
+7. Play the MIDI file:
+
+    python
+    pygame.mixer.music.load("melody.mid")
+    pygame.mixer.music.play()
+    
+
+8. Convert MIDI to WAV (if synthesizer or pygame MIDI backend is available).
+
+---
+
+
