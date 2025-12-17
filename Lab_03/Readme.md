@@ -26,6 +26,10 @@
 - MIDI Note Numbers map to musical notes.  
   - Example: 60 = Middle C, 69 = A4 (440 Hz)
  
+#### *Frequency Formula*
+
+To convert a MIDI note number n to its frequency: f = 440 × 2^((n - 69) / 12)
+ 
 ### *2. Music Theory (Basic)*
 
 #### *Beat*
@@ -36,15 +40,6 @@
 
 #### *Melody*
 - A sequential pattern of musical notes forming the main tune.
-
----
-
-
-
-#### *Frequency Formula*
-
-To convert a MIDI note number n to its frequency: f = 440 × 2^((n - 69) / 12)
-
 
 ---
 
