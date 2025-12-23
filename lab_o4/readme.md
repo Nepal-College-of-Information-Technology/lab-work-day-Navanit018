@@ -2,5 +2,6 @@
 
 ## Objectives:
 -Load and display images.
+
 -understand the digital images
 
