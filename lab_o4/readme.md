@@ -9,4 +9,4 @@
 -color to graysacle and binary images conversion.
 
 
--
+-Image transformation (resize,flip).
