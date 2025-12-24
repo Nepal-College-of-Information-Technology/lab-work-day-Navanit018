@@ -6,4 +6,7 @@
 
 -understand the digital images
 
--function all the image
+-color to graysacle and binary images conversion.
+
+
+-
