@@ -10,3 +10,6 @@
 
 
 -Image transformation (resize,flip).
+
+-Crop the ROI.
+
