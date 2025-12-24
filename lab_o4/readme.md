@@ -13,3 +13,6 @@
 
 -Crop the ROI.
 
+## Background Theory:
+
+-Digital image representattion.
