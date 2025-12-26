@@ -6,7 +6,7 @@
 
 -understand the digital images
 
--color to graysacle and binary images conversion.
+-color to grayscale and binary images conversion.
 
 
 -Image transformation (resize,flip).
