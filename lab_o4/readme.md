@@ -16,4 +16,4 @@
 ## Background Theory:
 
 -Digital image representattion.
--use precisely
+-use precisely.
