@@ -17,3 +17,4 @@
 
 -Digital image representattion.
 -use precisely.
+
