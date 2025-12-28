@@ -1,86 +1,50 @@
-import torch
 import cv2
-import numpy as np
-from torchvision import transforms
-from PIL import Image
-import torch.nn as nn
-from torchvision import models
+import mediapipe as mp
+from gesture_recognizer import GestureRecognizer
+from app_launcher import AppLauncher
 
-###########################################
-# 1. LOAD GENDER CLASSIFICATION MODEL
-###########################################
+# Initialize MediaPipe
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands()
 
-class GenderClassifier(nn.Module):
-    def __init__(self):
-        super(GenderClassifier, self).__init__()
-        self.model = models.resnet18(weights=None)
-        self.model.fc = nn.Linear(self.model.fc.in_features, 2)  # Male/Female
+# Initialize other components
+gesture_recognizer = GestureRecognizer('models/gesture_recognition_model.h5')
+app_launcher = AppLauncher()
 
-    def forward(self, x):
-        return self.model(x)
-
-# Load trained model (.pth file you downloaded)
-gender_model_path = "gender_model_simple.pth"
-
-gender_model = GenderClassifier()
-gender_model.load_state_dict(torch.load(gender_model_path, map_location="cpu"))
-gender_model.eval()
-
-# Preprocessing for gender model
-transform = transforms.Compose([
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                         std=[0.229, 0.224, 0.225])
-])
-
-###########################################
-# 2. LOAD YOLOv5 FOR PERSON DETECTION
-###########################################
-yolo = torch.hub.load("ultralytics/yolov5", "yolov5s", pretrained=True)
-
-###########################################
-# 3. LIVE CAMERA DETECTION
-###########################################
+# Capture Video
 cap = cv2.VideoCapture(0)
 
-while True:
+while cap.isOpened():
     ret, frame = cap.read()
     if not ret:
         break
 
-    # YOLOv5 detection
-    results = yolo(frame)
-    detections = results.xyxy[0]
+    frame = cv2.flip(frame, 1)
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-    for det in detections:
-        x1, y1, x2, y2, conf, cls = det
+    results = hands.process(rgb_frame)
 
-        if int(cls) == 0:  # Class 0 = person
-            # Draw person box
-            cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)),
-                          (0, 255, 0), 2)
+    if results.multi_hand_landmarks:
+        for hand_landmarks in results.multi_hand_landmarks:
+            # Extract landmarks for gesture recognition
+            landmarks = []
+            for lm in hand_landmarks.landmark:
+                landmarks.extend([lm.x, lm.y, lm.z])  # Append x, y, z coordinates
 
-            # Crop person for gender model
-            person_crop = frame[int(y1):int(y2), int(x1):int(x2)]
+            gesture_id = gesture_recognizer.predict(landmarks)  # Gesture prediction
 
-            if person_crop.size > 0:
-                img = Image.fromarray(cv2.cvtColor(person_crop, cv2.COLOR_BGR2RGB))
-                img_tensor = transform(img).unsqueeze(0)
+            # Launch application based on gesture
+            if gesture_id == 0:  # Example: gesture for launching Notepad
+                app_launcher.open_application("notepad.exe")
+            elif gesture_id == 1:  # Example: gesture for launching Browser
+                app_launcher.open_application("chrome.exe")
 
-                # Predict gender
-                with torch.no_grad():
-                    output = gender_model(img_tensor)
-                    pred = torch.argmax(output, dim=1).item()
+            # Draw landmarks
+            mp.solutions.drawing_utils.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
-                gender = "Male" if pred == 0 else "Female"
+    cv2.imshow("Gesture-Based App Launcher", frame)
 
-                cv2.putText(frame, gender, (int(x1), int(y1 - 10)),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
-
-    cv2.imshow("Object + Gender Recognition", frame)
-
-    if cv2.waitKey(1) & 0xFF == ord("q"):
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 cap.release()
