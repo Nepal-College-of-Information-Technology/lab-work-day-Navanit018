@@ -1,50 +1,67 @@
 import cv2
 import mediapipe as mp
-from gesture_recognizer import GestureRecognizer
-from app_launcher import AppLauncher
+import pyautogui
 
-# Initialize MediaPipe
-mp_hands = mp.solutions.hands
-hands = mp_hands.Hands()
+import numpy as np
 
-# Initialize other components
-gesture_recognizer = GestureRecognizer('models/gesture_recognition_model.h5')
-app_launcher = AppLauncher()
+# Screen size
+screen_width, screen_height = pyautogui.size()
 
-# Capture Video
+# Camera
 cap = cv2.VideoCapture(0)
+cap.set(3, 640)
+cap.set(4, 480)
 
-while cap.isOpened():
-    ret, frame = cap.read()
-    if not ret:
-        break
+# MediaPipe Hand
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands(max_num_hands=1)
+mp_draw = mp.solutions.drawing_utils
 
-    frame = cv2.flip(frame, 1)
-    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+# Smoothing
+smoothening = 7
+prev_x, prev_y = 0, 0
 
-    results = hands.process(rgb_frame)
+while True:
+    success, img = cap.read()
+    img = cv2.flip(img, 1)
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    results = hands.process(img_rgb)
 
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
-            # Extract landmarks for gesture recognition
-            landmarks = []
-            for lm in hand_landmarks.landmark:
-                landmarks.extend([lm.x, lm.y, lm.z])  # Append x, y, z coordinates
+            lm_list = []
+            for id, lm in enumerate(hand_landmarks.landmark):
+                h, w, _ = img.shape
+                cx, cy = int(lm.x * w), int(lm.y * h)
+                lm_list.append((id, cx, cy))
 
-            gesture_id = gesture_recognizer.predict(landmarks)  # Gesture prediction
+            # Index finger tip
+            x1, y1 = lm_list[8][1], lm_list[8][2]
+            # Thumb tip
+            x2, y2 = lm_list[4][1], lm_list[4][2]
 
-            # Launch application based on gesture
-            if gesture_id == 0:  # Example: gesture for launching Notepad
-                app_launcher.open_application("notepad.exe")
-            elif gesture_id == 1:  # Example: gesture for launching Browser
-                app_launcher.open_application("chrome.exe")
+            # Convert coordinates
+            screen_x = np.interp(x1, (0, 640), (0, screen_width))
+            screen_y = np.interp(y1, (0, 480), (0, screen_height))
 
-            # Draw landmarks
-            mp.solutions.drawing_utils.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            # Smooth movement
+            curr_x = prev_x + (screen_x - prev_x) / smoothening
+            curr_y = prev_y + (screen_y - prev_y) / smoothening
 
-    cv2.imshow("Gesture-Based App Launcher", frame)
+            pyautogui.moveTo(curr_x, curr_y)
+            prev_x, prev_y = curr_x, curr_y
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+            # Click gesture (thumb + index close)
+            distance = np.hypot(x2 - x1, y2 - y1)
+            if distance < 30:
+                pyautogui.click()
+                cv2.circle(img, (x1, y1), 15, (0, 255, 0), cv2.FILLED)
+
+            mp_draw.draw_landmarks(img, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+    cv2.imshow("Virtual Mouse", img)
+
+    if cv2.waitKey(1) & 0xFF == 27:
         break
 
 cap.release()
