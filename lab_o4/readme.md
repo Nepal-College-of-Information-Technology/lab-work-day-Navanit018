@@ -3,17 +3,18 @@
 
 ## Objectives:
 
--Load and display images.
 
--understand the digital images
+The main objectives of this experiment are as follows:
 
--color to grayscale and binary images conversion.
+To load and display digital images using Python.
 
+To understand the concept and structure of digital images.
 
--Image transformation (resize,flip).
+To convert color images into grayscale and binary images.
 
+To perform basic image transformations such as resizing and flipping.
 
--Crop the ROI.
+To crop a specific Region of Interest (ROI) from an image.
 
 ## Background Theory:
 
