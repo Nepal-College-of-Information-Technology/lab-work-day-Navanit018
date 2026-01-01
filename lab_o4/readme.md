@@ -21,3 +21,9 @@
 
 -use precisely.
 
+-color models.
+
+-Image file format
+
+=
+
