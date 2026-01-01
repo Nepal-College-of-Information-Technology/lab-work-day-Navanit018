@@ -30,3 +30,27 @@ To crop a specific Region of Interest (ROI) from an image.
 
 -introduction to opencv
 
+Procedure
+
+-First, the required Python libraries such as OpenCV, NumPy, and Matplotlib are imported to perform image processing operations.
+
+The input image is loaded from the specified directory using Python image-handling functions and stored in a variable.
+
+The loaded image is displayed on the screen to verify that the image has been read correctly.
+
+The digital properties of the image, such as height, width, and number of color channels, are analyzed to understand the structure of a digital image.
+
+The color image is converted into a grayscale image using appropriate color conversion techniques.
+
+The grayscale image is further converted into a binary image by applying thresholding, where pixel values are classified into black and white.
+
+Image transformation operations such as resizing are performed to change the dimensions of the image.
+
+The image is flipped horizontally and vertically to observe geometric transformations.
+
+A specific Region of Interest (ROI) is selected from the image by defining coordinate boundaries, and the selected portion is cropped.
+
+Each transformed image is displayed separately to observe the effect of every operation.
+
+Finally, the results of all operations are analyzed and verified to understand the fundamental concepts of digital image processing.
+
