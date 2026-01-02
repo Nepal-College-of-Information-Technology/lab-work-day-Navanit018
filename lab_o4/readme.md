@@ -31,6 +31,7 @@ To crop a specific Region of Interest (ROI) from an image.
 -introduction to opencv
 
   ##  Procedure
+  
 
 -First, the required Python libraries such as OpenCV, NumPy, and Matplotlib are imported to perform image processing operations.
 
@@ -56,7 +57,8 @@ Finally, the results of all operations are analyzed and verified to understand t
 
 ##  Output
 
-The input image was successfully loaded and displayed on the screen.
+
+==> The input image was successfully loaded and displayed on the screen.
 
 The properties of the digital image such as resolution and color channels were observed.
 
@@ -73,5 +75,6 @@ A selected Region of Interest (ROI) was cropped from the original image and disp
 All image processing operations produced the expected visual results, confirming correct implementation of basic image operations using Python.
 
 ## conclusion
-In this experiment, the fundamental concepts of digital images and basic image operations were successfully studied using Python. Digital images were loaded and displayed, and their structure was analyzed to understand pixel representation. Color images were converted into grayscale and binary formats to observe intensity variations. Basic image transformations such as resizing and flipping were performed effectively. Additionally, a specific Region of Interest (ROI) was cropped from the image. The results confirm that Python and OpenCV provide efficient tools for performing basic image processing operations.
+
+==> In this experiment, the fundamental concepts of digital images and basic image operations were successfully studied using Python. Digital images were loaded and displayed, and their structure was analyzed to understand pixel representation. Color images were converted into grayscale and binary formats to observe intensity variations. Basic image transformations such as resizing and flipping were performed effectively. Additionally, a specific Region of Interest (ROI) was cropped from the image. The results confirm that Python and OpenCV provide efficient tools for performing basic image processing operations.
 
