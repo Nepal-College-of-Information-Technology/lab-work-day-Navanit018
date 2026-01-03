@@ -6,7 +6,7 @@
 
 ==> The main objectives of this experiment are as follows:
 
-To load and display digital images using Python.
+To load and display digital images using python.
 
 To understand the concept and structure of digital images.
 
