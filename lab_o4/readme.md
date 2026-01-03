@@ -55,7 +55,7 @@ Each transformed image is displayed separately to observe the effect of every op
 
 Finally, the results of all operations are analyzed and verified to understand the fundamental concepts of digital image processing.
 
-##  Output
+## output
 
 
 ==> The input image was successfully loaded and displayed on the screen.
