@@ -17,7 +17,6 @@ else:
         print("Analysis Results:")
         print(analysis)
         
-        # Extract the first face analysis (if multiple faces, it returns a list)
         if isinstance(analysis, list):
             face_data = analysis[0]
         else:
@@ -49,3 +48,4 @@ else:
     except Exception as e:
 
         print(f"Error during analysis: {e}")
+
