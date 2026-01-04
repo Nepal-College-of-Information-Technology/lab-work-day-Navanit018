@@ -24,6 +24,7 @@ To crop a specific Region of Interest (ROI) from an image.
 
 -color models.
 
+
 -Image file format
 
 -Basic image transformation
