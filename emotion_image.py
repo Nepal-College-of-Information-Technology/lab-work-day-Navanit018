@@ -47,4 +47,5 @@ else:
         cv2.destroyAllWindows()
         
     except Exception as e:
+
         print(f"Error during analysis: {e}")
