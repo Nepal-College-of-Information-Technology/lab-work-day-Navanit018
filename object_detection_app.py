@@ -170,4 +170,5 @@ class ObjectDetectionApp:
 if __name__ == "__main__":
     root = tk.Tk()
     app = ObjectDetectionApp(root)
+
     root.mainloop()
