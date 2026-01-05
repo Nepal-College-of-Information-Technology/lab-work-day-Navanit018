@@ -48,6 +48,10 @@ The audio file was successfully loaded and visualized. Volume amplification and 
 
 This experiment demonstrates that Python is an effective tool for basic sound processing tasks. Libraries like Librosa simplify complex audio operations. Care must be taken while amplifying audio, as excessive gain may cause clipping and distortion.
 
+
+
+
+
 ## 8. Conclusion
 
 Basic sound processing and manipulation can be efficiently performed using Python. Understanding these fundamentals is essential for advanced applications such as speech recognition, music analysis, and audio-based machine learning systems.
