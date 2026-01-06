@@ -14,7 +14,7 @@ To convert color images into grayscale and binary images.
 
 To perform basic image transformations such as resizing and flipping.
 
-To crop a specific Region of Interest (ROI) from an image.
+To crop a specific Region of Interest (ROI) from an image
 
 ## Background Theory:
 
