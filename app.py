@@ -6,7 +6,7 @@ from sklearn.naive_bayes import MultinomialNB
 
 # Sample training data (you can replace this with a more comprehensive dataset)
 data = {
-    'symptom': [
+    'symptom': 
         "fever cough",
         "fever headache",
         "headache fatigue",
@@ -56,4 +56,5 @@ if st.button("Check Symptoms"):
     
     # Display predictions
     st.write("### Predicted Condition:")
+
     st.write(f"- **Condition**: {predicted_condition}")
