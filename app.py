@@ -58,3 +58,4 @@ if st.button("Check Symptoms"):
     st.write("### Predicted Condition:")
 
     st.write(f"- **Condition**: {predicted_condition}")
+
