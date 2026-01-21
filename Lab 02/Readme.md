@@ -20,6 +20,16 @@ Python provides powerful libraries such as **NumPy**, **SciPy**, **Librosa**, an
 * SoundFile – saving audio files
 * Matplotlib – waveform visualization
 
+
+##Lab Folder Structure
+lab_02/
+│── Lab_with_Sound (2).ipynb
+│── generated_5sec_drum.wav
+│── guitar_sound.wav
+│── harmonious_sound.wav
+│── readme.md
+
+
 ## 4. Theory
 
 ### 4.1 Digital Audio Concepts
