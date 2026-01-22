@@ -1,6 +1,6 @@
 
-MMS Lab 5
-Title:Image Classification Using OpenCV and Pre-trained Deep Learning Models
+## MMS Lab 5
+# Title:Image Classification Using OpenCV and Pre-trained Deep Learning Models
 
 1. Objective
 The aim of this lab is to implement image classification using OpenCV and pre-trained deep learning models. Specifically, the task involves detecting faces in an image and classifying them into categories such as age, gender, and emotion. This demonstrates how computer vision pipelines combine detection and classification for real-world applications.
@@ -82,6 +82,10 @@ cv2.destroyAllWindows()
 Age: 25-32
 Gender: Male
 Emotion: Happy
+
+## Output
+
+![alt text](image.png)   ![alt text](image-1.png)  ![alt text](image-2.png)
 
 
 

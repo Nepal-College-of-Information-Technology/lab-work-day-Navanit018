@@ -78,8 +78,9 @@ plt.axis('off')
 plt.show()
 ```
 
-## 8. Output
-
+## 8. Output:
+![alt text](image-2.png)     ![alt text](image-3.png)    ![alt text](image-4.png)
+![alt text](image-5.png)  ![alt text](image-6.png)  ![alt text](image-7.png)  ![alt text](image-8.png)
 * Images successfully read and displayed
 * Image properties explored
 * Color to grayscale and binary conversions performed
