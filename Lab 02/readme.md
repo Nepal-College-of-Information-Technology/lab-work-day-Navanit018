@@ -1,5 +1,4 @@
-//Lab 02
-//Lab 02
+## Lab_02
 
 # Title: Basic Sound Processing and Manipulation in Python
 
@@ -22,8 +21,8 @@ Python provides powerful libraries such as **NumPy**, **SciPy**, **Librosa**, an
 * Matplotlib – waveform visualization
 
 
-##Lab Folder Structure
-lab_02/
+## Lab Folder Structure 
+ lab_02/
 │── Lab_with_Sound (2).ipynb
 │── generated_5sec_drum.wav
 │── guitar_sound.wav
@@ -46,10 +45,13 @@ lab_02/
 * Visualizing waveforms
 * Changing volume
 * Trimming audio
-* Saving modified audio
+* Saving modified audio  
 
+## output:
 
-
+<audio controls src="harmonium_sound.wav" title="Title"></audio> 
+<audio controls src="guitar_sound.wav" title="Title"></audio>
+<audio controls src="generated_5sec_drum.wav" title="Title"></audio>
 
 ## 6. Result
 
